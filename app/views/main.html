@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-md-4">
+    <div class="row">
+      <div class="col-md-5">
+        <label>Points to add <input type="text" ng-model="addCount"/></label>
+      </div>
+      <div class="col-md-6" style="margin-top: 10px">
+        <button class="btn btn-default" ng-click="generatePoints()">Generate Points</button>
+        <button class="btn btn-default" ng-click="generatePolygon()">Gen Polygon</button>
+        <button class="btn btn-default" ng-click="findInnerPoints()">Find</button>
+      </div>
+    </div>
+      <!--<label for="data">Load points</label>-->
+      <!--<input id="data" type="file"/>-->
+    <label for="">Input points</label>
+    <table>
+    <thread>
+      <th>X</th>
+      <th>Y</th>
+    </thread>
+    <tr ng-repeat="point in points">
+      <td>
+        <input type="text" ng-model="point.x" numericsaving/>
+      </td>
+      <td>
+          <input type="text" ng-model="point.y" numericsaving/>
+      </td>
+    </tr>
+  </table>
+
+    <label>Search zone points</label>
+    <table>
+    <thread>
+      <th>X</th>
+      <th>Y</th>
+    </thread>
+    <tr ng-repeat="pp in searchZone">
+      <td>
+        <input type="text" ng-model="pp.x" numericsaving/>
+      </td>
+      <td>
+          <input type="text" ng-model="pp.y" numericsaving/>
+      </td>
+      <td>
+        <button class="btn" ng-click="remove($index)">-</button>
+      </td>
+      <td>
+        <button class="btn" ng-click="addAfter($index)">+</button>
+      </td>
+    </tr>
+  </table>
+  </div>
+  <div class="col-md-8">
+    <div class="jumbotron">
+        <canvas id="c" width="900" height="700"></canvas>
+    </div>
+  </div>
+</div>
